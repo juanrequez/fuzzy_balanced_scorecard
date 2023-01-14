@@ -1,0 +1,86 @@
+[System]
+Name='logroperspectiva'
+Type='sugeno'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='logroindicador1'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input2]
+Name='logroindicador2'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input3]
+Name='logroindicador3'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input4]
+Name='logroindicador4'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+
+[Output1]
+Name='logroperspectiva'
+Range=[0 100]
+NumMFs=5
+MF1='Muy deficiente':'constant',[0]
+MF2='Deficiente':'constant',[25]
+MF3='Regular':'constant',[50]
+MF4='moderado':'constant',[75]
+MF5='Satisfactorio':'constant',[100]
+
+[Rules]
+1 0 0 0, 1 (1) : 1
+2 0 0 0, 2 (1) : 1
+3 0 0 0, 3 (1) : 1
+4 0 0 0, 4 (1) : 1
+5 0 0 0, 5 (1) : 1
+0 1 0 0, 1 (1) : 1
+0 2 0 0, 2 (1) : 1
+0 3 0 0, 3 (1) : 1
+0 4 0 0, 4 (1) : 1
+0 5 0 0, 5 (1) : 1
+0 0 1 0, 1 (1) : 1
+0 0 2 0, 2 (1) : 1
+0 0 3 0, 3 (1) : 1
+0 0 4 0, 4 (1) : 1
+0 0 5 0, 5 (1) : 1
+0 0 0 1, 1 (1) : 1
+0 0 0 2, 2 (1) : 1
+0 0 0 3, 3 (1) : 1
+0 0 0 4, 4 (1) : 1
+0 0 0 5, 5 (1) : 1
+

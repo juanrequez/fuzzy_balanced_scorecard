@@ -1,0 +1,204 @@
+[System]
+Name='balancedscorecard'
+Type='sugeno'
+Version=2.0
+NumInputs=8
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Cliente'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_Deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='Moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input2]
+Name='Relevancia_Cliente'
+Range=[0 100]
+NumMFs=5
+MF1='Irrelevante':'trapmf',[0 0 10 30]
+MF2='Poco_Relevante':'trimf',[10 30 50]
+MF3='Relevante':'trimf',[30 50 70]
+MF4='Importante':'trimf',[50 70 90]
+MF5='Vital':'trapmf',[70 90 100 100]
+
+[Input3]
+Name='Procesos_internos'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_Deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='Moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input4]
+Name='relevancia_procesos_internos'
+Range=[0 100]
+NumMFs=5
+MF1='Irrelevante':'trapmf',[0 0 10 30]
+MF2='Poco_Relevante':'trimf',[10 30 50]
+MF3='Relevante':'trimf',[30 50 70]
+MF4='Importante':'trimf',[50 70 90]
+MF5='Vital':'trapmf',[70 90 100 100]
+
+[Input5]
+Name='Aprendizaje_y_Desarrollo'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_Deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='Moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input6]
+Name='relevancia_aprendizaje_y_desarrollo'
+Range=[0 100]
+NumMFs=5
+MF1='Irrelevante':'trapmf',[0 0 10 30]
+MF2='Poco_Relevante':'trimf',[10 30 50]
+MF3='Relevante':'trimf',[30 50 70]
+MF4='Importante':'trimf',[50 70 90]
+MF5='Vital':'trapmf',[70 90 100 100]
+
+[Input7]
+Name='Financiera'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_Deficiente':'trapmf',[0 0 10 30]
+MF2='Deficiente':'trimf',[10 30 50]
+MF3='Regular':'trimf',[30 50 70]
+MF4='Moderado':'trimf',[50 70 90]
+MF5='Satisfactorio':'trapmf',[70 90 100 100]
+
+[Input8]
+Name='Relevancia_Financiera'
+Range=[0 100]
+NumMFs=5
+MF1='Irrelevante':'trapmf',[0 0 10 30]
+MF2='Poco_Relevante':'trimf',[10 30 50]
+MF3='Relevante':'trimf',[30 50 70]
+MF4='Importante':'trimf',[50 70 90]
+MF5='Vital':'trapmf',[70 90 100 100]
+
+[Output1]
+Name='Evaluacion'
+Range=[0 100]
+NumMFs=5
+MF1='Muy_Bajo':'constant',[0]
+MF2='Bajo':'constant',[25]
+MF3='Medio':'constant',[50]
+MF4='Alto':'constant',[75]
+MF5='Muy_Alto':'constant',[100]
+
+[Rules]
+1 1 0 0 0 0 0 0, 5 (1) : 1
+1 2 0 0 0 0 0 0, 4 (1) : 1
+1 3 0 0 0 0 0 0, 3 (1) : 1
+1 4 0 0 0 0 0 0, 2 (1) : 1
+1 5 0 0 0 0 0 0, 1 (1) : 1
+2 1 0 0 0 0 0 0, 5 (1) : 1
+2 2 0 0 0 0 0 0, 5 (1) : 1
+2 3 0 0 0 0 0 0, 4 (1) : 1
+2 4 0 0 0 0 0 0, 3 (1) : 1
+2 5 0 0 0 0 0 0, 2 (1) : 1
+3 1 0 0 0 0 0 0, 5 (1) : 1
+3 2 0 0 0 0 0 0, 5 (1) : 1
+3 3 0 0 0 0 0 0, 5 (1) : 1
+3 4 0 0 0 0 0 0, 4 (1) : 1
+3 5 0 0 0 0 0 0, 3 (1) : 1
+4 1 0 0 0 0 0 0, 5 (1) : 1
+4 2 0 0 0 0 0 0, 5 (1) : 1
+4 3 0 0 0 0 0 0, 5 (1) : 1
+4 4 0 0 0 0 0 0, 5 (1) : 1
+4 5 0 0 0 0 0 0, 4 (1) : 1
+5 1 0 0 0 0 0 0, 5 (1) : 1
+5 2 0 0 0 0 0 0, 5 (1) : 1
+5 3 0 0 0 0 0 0, 5 (1) : 1
+5 4 0 0 0 0 0 0, 5 (1) : 1
+5 5 0 0 0 0 0 0, 5 (1) : 1
+0 0 1 1 0 0 0 0, 5 (1) : 1
+0 0 1 2 0 0 0 0, 4 (1) : 1
+0 0 1 3 0 0 0 0, 3 (1) : 1
+0 0 1 4 0 0 0 0, 2 (1) : 1
+0 0 1 5 0 0 0 0, 1 (1) : 1
+0 0 2 1 0 0 0 0, 5 (1) : 1
+0 0 2 2 0 0 0 0, 5 (1) : 1
+0 0 2 3 0 0 0 0, 4 (1) : 1
+0 0 2 4 0 0 0 0, 3 (1) : 1
+0 0 2 5 0 0 0 0, 2 (1) : 1
+0 0 3 1 0 0 0 0, 5 (1) : 1
+0 0 3 2 0 0 0 0, 5 (1) : 1
+0 0 3 3 0 0 0 0, 5 (1) : 1
+0 0 3 4 0 0 0 0, 4 (1) : 1
+0 0 3 5 0 0 0 0, 3 (1) : 1
+0 0 4 1 0 0 0 0, 5 (1) : 1
+0 0 4 2 0 0 0 0, 5 (1) : 1
+0 0 4 3 0 0 0 0, 5 (1) : 1
+0 0 4 4 0 0 0 0, 5 (1) : 1
+0 0 4 5 0 0 0 0, 4 (1) : 1
+0 0 5 1 0 0 0 0, 5 (1) : 1
+0 0 5 2 0 0 0 0, 5 (1) : 1
+0 0 5 3 0 0 0 0, 5 (1) : 1
+0 0 5 4 0 0 0 0, 5 (1) : 1
+0 0 5 5 0 0 0 0, 5 (1) : 1
+0 0 0 0 1 1 0 0, 5 (1) : 1
+0 0 0 0 1 2 0 0, 4 (1) : 1
+0 0 0 0 1 3 0 0, 3 (1) : 1
+0 0 0 0 1 4 0 0, 2 (1) : 1
+0 0 0 0 1 5 0 0, 1 (1) : 1
+0 0 0 0 2 1 0 0, 5 (1) : 1
+0 0 0 0 2 2 0 0, 5 (1) : 1
+0 0 0 0 2 3 0 0, 4 (1) : 1
+0 0 0 0 2 4 0 0, 3 (1) : 1
+0 0 0 0 2 5 0 0, 2 (1) : 1
+0 0 0 0 3 1 0 0, 5 (1) : 1
+0 0 0 0 3 2 0 0, 5 (1) : 1
+0 0 0 0 3 3 0 0, 5 (1) : 1
+0 0 0 0 3 4 0 0, 4 (1) : 1
+0 0 0 0 3 5 0 0, 3 (1) : 1
+0 0 0 0 4 1 0 0, 5 (1) : 1
+0 0 0 0 4 2 0 0, 5 (1) : 1
+0 0 0 0 4 3 0 0, 5 (1) : 1
+0 0 0 0 4 4 0 0, 5 (1) : 1
+0 0 0 0 4 5 0 0, 4 (1) : 1
+0 0 0 0 5 1 0 0, 5 (1) : 1
+0 0 0 0 5 2 0 0, 5 (1) : 1
+0 0 0 0 5 3 0 0, 5 (1) : 1
+0 0 0 0 5 4 0 0, 5 (1) : 1
+0 0 0 0 5 5 0 0, 5 (1) : 1
+0 0 0 0 0 0 1 1, 5 (1) : 1
+0 0 0 0 0 0 1 2, 4 (1) : 1
+0 0 0 0 0 0 1 3, 3 (1) : 1
+0 0 0 0 0 0 1 4, 2 (1) : 1
+0 0 0 0 0 0 1 5, 1 (1) : 1
+0 0 0 0 0 0 2 1, 5 (1) : 1
+0 0 0 0 0 0 2 2, 5 (1) : 1
+0 0 0 0 0 0 2 3, 4 (1) : 1
+0 0 0 0 0 0 2 4, 3 (1) : 1
+0 0 0 0 0 0 2 5, 2 (1) : 1
+0 0 0 0 0 0 3 1, 5 (1) : 1
+0 0 0 0 0 0 3 2, 5 (1) : 1
+0 0 0 0 0 0 3 3, 5 (1) : 1
+0 0 0 0 0 0 3 4, 4 (1) : 1
+0 0 0 0 0 0 3 5, 3 (1) : 1
+0 0 0 0 0 0 4 1, 5 (1) : 1
+0 0 0 0 0 0 4 2, 5 (1) : 1
+0 0 0 0 0 0 4 3, 5 (1) : 1
+0 0 0 0 0 0 4 4, 5 (1) : 1
+0 0 0 0 0 0 4 5, 4 (1) : 1
+0 0 0 0 0 0 5 1, 5 (1) : 1
+0 0 0 0 0 0 5 2, 5 (1) : 1
+0 0 0 0 0 0 5 3, 5 (1) : 1
+0 0 0 0 0 0 5 4, 5 (1) : 1
+0 0 0 0 0 0 5 5, 5 (1) : 1
